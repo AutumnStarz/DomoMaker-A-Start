@@ -9,6 +9,8 @@ const router = (app) => {
 
     app.get('/logout', controller.Account.logout);
     app.get('/maker', controller.Domo.makerPage);
+    app.post('/maker', controller.Domo.makeDomo);
+
     app.get('/', controller.Account.loginPage);
 
 };
