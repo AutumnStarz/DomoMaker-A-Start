@@ -32,6 +32,8 @@ redisClient.on('error', err => console.log('Redis Client Error', err));
 redisClient.connect().then(() => {
     const app = express();
 
+    app.set('trust proxy', 1);
+
 app.use(helmet());
 app.use('/assets', express.static(path.resolve(`${__dirname}/../hosted`)));
 app.use(favicon(`${__dirname}/../hosted/img/favicon.png`));
